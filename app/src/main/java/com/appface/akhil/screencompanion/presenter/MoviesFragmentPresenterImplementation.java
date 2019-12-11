@@ -12,7 +12,7 @@ public class MoviesFragmentPresenterImplementation implements MovieScreenContrac
     }
 
     @Override
-    public void getText() {
-        view.setText("MOVIES");
+    public void start() {
+        view.intialisePageAdapter();
     }
 }

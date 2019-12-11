@@ -7,10 +7,7 @@
     tools:context=".view.MainActivity"
     android:gravity="center"
     >
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_movielist"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+
 
     <FrameLayout
         android:layout_above="@id/bottom_navigation"

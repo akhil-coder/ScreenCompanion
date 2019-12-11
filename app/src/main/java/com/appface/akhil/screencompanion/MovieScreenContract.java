@@ -3,10 +3,10 @@ package com.appface.akhil.screencompanion;
 public interface MovieScreenContract {
 
     interface View{
-        void setText(String str);
+        void intialisePageAdapter();
     }
 
     interface Presenter{
-        void getText();
+        void start();
     }
 }

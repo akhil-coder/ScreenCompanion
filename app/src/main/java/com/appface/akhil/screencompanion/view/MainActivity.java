@@ -40,10 +40,6 @@ public class MainActivity extends BaseActivity implements MainScreenContract.Vie
     MainActivityPresenterImplementation presenterImplementation;
     Unbinder unbinder;
 
-
-    @BindView(R.id.rv_movielist)
-    RecyclerView recyclerView;
-
     @BindView(R.id.bottom_navigation)
     BottomNavigationView bottomNavigationView;
     @Override
@@ -81,22 +77,6 @@ public class MainActivity extends BaseActivity implements MainScreenContract.Vie
     public void showProgressBar() {
     }
 
-    @Override
-    public void intialisePageAdapter() {
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
-
-        MovieDiscoverViewModel movieDiscoverViewModel = ViewModelProviders.of(this).get(MovieDiscoverViewModel.class);
-        MoviePagedListAdapter myPagedListAdapter = new MoviePagedListAdapter(this);
-        movieDiscoverViewModel.pagedListLiveData.observe(this, new Observer<PagedList<MovieDiscoverResponseResults>>() {
-            @Override
-            public void onChanged(PagedList<MovieDiscoverResponseResults> movieDiscoverResponseResults) {
-                myPagedListAdapter.submitList(movieDiscoverResponseResults);
-            }
-        });
-        recyclerView.setAdapter(myPagedListAdapter);
-    }
 
     @Override
     public void startSearchActivity() {

@@ -13,7 +13,6 @@ public interface MainScreenContract {
 //        boolean navigateToSellerListActivity();
 
         void showProgressBar();
-        void intialisePageAdapter();
         void startSearchActivity();
         void changeTabFragment(Fragment fragment);
 

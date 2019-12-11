@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 
 import com.appface.akhil.screencompanion.MovieScreenContract;
@@ -22,7 +21,7 @@ public class TVShowsFragment extends Fragment implements MovieScreenContract.Vie
     }
 
     @Override
-    public void setText(String str) {
-        Toast.makeText(getActivity(), str, Toast.LENGTH_SHORT).show();
+    public void intialisePageAdapter() {
+
     }
 }

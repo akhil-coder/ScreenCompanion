@@ -30,6 +30,6 @@ public class MainActivityPresenterImplementation implements MainScreenContract.P
 
     @Override
     public void onStart() {
-        view.intialisePageAdapter();
+
     }
 }
