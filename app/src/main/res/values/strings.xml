@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MVPFramewok</string>
+    <string name="mImageBaseUrl">http://image.tmdb.org/t/p/w185</string>
+    <string name="hint_search">Type here...</string>
+    <string name="api_key">2dd3930734dabf88df8af1b709bd8748</string>
+    <string name="MOVIE_CONST">100</string>
+    <string name="TVSHOW_CONST">101</string>
+</resources>
