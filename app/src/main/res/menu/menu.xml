@@ -5,4 +5,8 @@
         android:id="@+id/action_search_view"
         android:icon="@drawable/ic_search_black_24dp"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/action_filter_movies"
+        android:icon="@drawable/ic_filter_list_black_24dp"
+        app:showAsAction="always" />
 </menu>

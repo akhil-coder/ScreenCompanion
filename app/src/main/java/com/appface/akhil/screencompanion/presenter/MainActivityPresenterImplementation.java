@@ -2,8 +2,6 @@ package com.appface.akhil.screencompanion.presenter;
 
 
 import com.appface.akhil.screencompanion.MainScreenContract;
-import com.appface.akhil.screencompanion.view.fragments.MoviesFragment;
-import com.appface.akhil.screencompanion.view.fragments.TVShowsFragment;
 
 public class MainActivityPresenterImplementation implements MainScreenContract.Presenter {
 
@@ -15,17 +13,16 @@ public class MainActivityPresenterImplementation implements MainScreenContract.P
         this.view = view;
     }
 
+
+
     @Override
-    public void onSearchMoviesClicked() {
-        view.startSearchActivity();
+    public void onMoviesClicked() {
+            view.startMoviesActivity();
     }
 
     @Override
-    public void onBottomNavClicked(int s) {
-        if (s == MOVIE_CONST)
-            view.changeTabFragment(new MoviesFragment());
-        else if (s == TVSHOW_CONST)
-            view.changeTabFragment(new TVShowsFragment());
+    public void onTVshowsClicked() {
+
     }
 
     @Override

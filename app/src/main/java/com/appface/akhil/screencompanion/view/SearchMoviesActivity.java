@@ -46,6 +46,10 @@ public class SearchMoviesActivity extends BaseActivity implements SearchMoviesSc
 
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
+
+    @BindView(R.id.tb_searchbar)
+    Toolbar tb_searchbar;
+
     private Unbinder unbinder;
     private List<MovieResultItem> moviesearchlist = new ArrayList<>();
     private MovieSearchRecyclerViewAdapter mAdapter;
@@ -62,11 +66,11 @@ public class SearchMoviesActivity extends BaseActivity implements SearchMoviesSc
         unbinder = ButterKnife.bind(this);
         presenterImplementation = new SearchMoviesActivityPresenterImplementation(this);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(tb_searchbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+        tb_searchbar.setTitle(getString(R.string.moviessearch));
+        tb_searchbar.setNavigationOnClickListener(v -> onBackPressed());
     }
 
     // TODO : On search list item click
@@ -177,5 +181,11 @@ public class SearchMoviesActivity extends BaseActivity implements SearchMoviesSc
     @Override
     public void setPresenter(SearchMoviesScreenContract.Presenter presenter) {
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
     }
 }

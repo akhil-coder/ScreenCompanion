@@ -14,6 +14,8 @@ public interface MainScreenContract {
 
         void showProgressBar();
         void startSearchActivity();
+        void startMoviesActivity();
+        void startTVshowsActivity();
         void changeTabFragment(Fragment fragment);
 
     }
@@ -23,7 +25,8 @@ public interface MainScreenContract {
 //        void onToDoItemSelected(long toDoId);
 //        void onSellerListClicked();
 
-        public void onSearchMoviesClicked();
-        public void onBottomNavClicked(int s);
+        public void onTVshowsClicked();
+        public void onMoviesClicked();
+
     }
 }

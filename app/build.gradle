@@ -14,6 +14,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
         }
     }
     compileOptions {
@@ -33,11 +34,13 @@ dependencies {
     def room_version = "2.2.2"
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
-    implementation "android.arch.persistence.room:rxjava2:$room_version"
+    implementation 'androidx.room:room-rxjava2:2.0.0'
 
     implementation 'com.blankj:utilcode:1.5.0'
 
     implementation 'com.google.android.material:material:1.0.0'
+    implementation "androidx.cardview:cardview:1.0.0"
+
 
     //Butterknife
     implementation 'com.jakewharton:butterknife:10.2.0'
