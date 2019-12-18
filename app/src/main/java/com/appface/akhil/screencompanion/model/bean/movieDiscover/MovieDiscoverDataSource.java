@@ -14,12 +14,13 @@ public class MovieDiscoverDataSource extends PageKeyedDataSource<Integer, MovieD
     public static final int PAGE_SIZE = 50;
     private static final int FIRST_PAGE = 1;
     private static final String SITE_NAME = "TheMovieDB";
+    private String sort_by = "";
 
     @Override
     public void loadInitial(@NonNull LoadInitialParams<Integer> params, @NonNull LoadInitialCallback<Integer, MovieDiscoverResponseResults> callback) {
         NetworkModule.getInstance()
                 .getApi()
-                .discoverMovie("2dd3930734dabf88df8af1b709bd8748", FIRST_PAGE)
+                .discoverMovie("2dd3930734dabf88df8af1b709bd8748", FIRST_PAGE, sort_by)
                 .enqueue(new Callback<MovieDiscoverResponse>() {
                     @Override
                     public void onResponse(Call<MovieDiscoverResponse> call, Response<MovieDiscoverResponse> response) {
@@ -39,7 +40,7 @@ public class MovieDiscoverDataSource extends PageKeyedDataSource<Integer, MovieD
     public void loadBefore(@NonNull LoadParams<Integer> params, @NonNull LoadCallback<Integer, MovieDiscoverResponseResults> callback) {
         NetworkModule.getInstance()
                 .getApi()
-                .discoverMovie("2dd3930734dabf88df8af1b709bd8748", params.key)
+                .discoverMovie("2dd3930734dabf88df8af1b709bd8748", params.key, sort_by)
                 .enqueue(new Callback<MovieDiscoverResponse>() {
                     @Override
                     public void onResponse(Call<MovieDiscoverResponse> call, Response<MovieDiscoverResponse> response) {
@@ -61,7 +62,7 @@ public class MovieDiscoverDataSource extends PageKeyedDataSource<Integer, MovieD
     public void loadAfter(@NonNull LoadParams<Integer> params, @NonNull LoadCallback<Integer, MovieDiscoverResponseResults> callback) {
         NetworkModule.getInstance()
                 .getApi()
-                .discoverMovie("2dd3930734dabf88df8af1b709bd8748", params.key)
+                .discoverMovie("2dd3930734dabf88df8af1b709bd8748", params.key, sort_by)
                 .enqueue(new Callback<MovieDiscoverResponse>() {
                     @Override
                     public void onResponse(Call<MovieDiscoverResponse> call, Response<MovieDiscoverResponse> response) {
@@ -78,4 +79,5 @@ public class MovieDiscoverDataSource extends PageKeyedDataSource<Integer, MovieD
                     }
                 });
     }
+
 }

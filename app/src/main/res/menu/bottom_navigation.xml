@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/nav_movies"
-        android:icon="@drawable/ic_movie_black_24dp"
-        android:title="Movies" />
+        android:id="@+id/nav_sort"
+        android:icon="@drawable/ic_sort_black_24dp"
+        android:title="Sorting" />
     <item
-        android:id="@+id/nav_tvshows"
-        android:icon="@drawable/ic_tv_black_24dp"
-        android:title="TV Shows" />
+        android:id="@+id/nav_filter"
+        android:icon="@drawable/ic_filter_list_black_24dp"
+        android:title="Filter" />
 </menu>

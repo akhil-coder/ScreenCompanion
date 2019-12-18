@@ -13,7 +13,7 @@ import retrofit2.http.Query;
 public interface APIService {
 
     @GET("3/discover/movie")
-    Call<MovieDiscoverResponse> discoverMovie(@Query("api_key") String api_key, @Query("page") int page);
+    Call<MovieDiscoverResponse> discoverMovie(@Query("api_key") String api_key, @Query("page") int page, @Query("sort_by") String sort_by);
 
     @GET("3/search/movie")
     Single<MovieSearchResponse> searchMovie(@Query("api_key") String apiKey, @Query("query") String query, @Query("page") String page);
